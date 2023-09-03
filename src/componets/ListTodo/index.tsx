@@ -23,16 +23,16 @@ const index = ({ listTodos, CompltedTodo,EditTodo, deleteTodo}: TodoListProps) =
         setEditTitle(title);
       };
     
-      const handleEditCancel = () => {
-        setEditIndex(null);
-        setEditTitle("");
-      };
+      // const handleEditCancel = () => {
+      //   setEditIndex(null);
+      //   setEditTitle("");
+      // };
     
-      const handleEditSave = (index: number, newTitle: string) => {
-        EditTodo(index);
-        setEditIndex(null);
-        setEditTitle("");
-      };
+      // const handleEditSave = (index: number, newTitle: string) => {
+      //   EditTodo(index);
+      //   setEditIndex(null);
+      //   setEditTitle("");
+      // };
       
 
   return (
@@ -47,15 +47,15 @@ const index = ({ listTodos, CompltedTodo,EditTodo, deleteTodo}: TodoListProps) =
                 value={editTitle}
                 onChange={(e) => setEditTitle(e.target.value)}
               />
-              <button onClick={() => handleEditSave(index,editTitle)}>Save</button>
-              <button onClick={handleEditCancel}>Cancel</button>
+              {/* <button onClick={() => handleEditSave(index,editTitle)}>Save</button>
+              <button onClick={handleEditCancel}>Cancel</button> */}
             </>
           ) : (
             <>
               {todo.isCompleted ? <del>{todo.title}</del> : todo.title}
               <div className="button-todo">
                 <button onClick={() => CompltedTodo(index)}>Complete</button>
-                <button onClick={() => handleEditStart(index, todo.title)}>Edit</button>
+                {/* <button onClick={() => handleEditStart(index, todo.title)}>Edit</button> */}
                 <button onClick={() => deleteTodo(index)}>Delete</button>
               </div>
             </>

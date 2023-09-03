@@ -18,17 +18,19 @@ ul {
 li {
   display: flex;
   align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
   margin: 5px 0;
   font-size: 16px;
   background-color: antiquewhite;
-  width: 35%;
-  height: 50px;
+  width: 70%;
+  height: 60px;
   border-radius: 50px;
 }
 .button-todo {
   display: flex;
-  align-items: self-end;
-  margin-left: 14rem;
+  align-items: center;
+  margin-left: 28rem;
   padding: 10px 20px;
 }
 .button-todo button {
