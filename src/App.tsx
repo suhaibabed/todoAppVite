@@ -5,12 +5,12 @@ import Navbar from "./componets/Navbar";
 
 function App() {
   const [listTodos, setListTodos] = useState<
-    { title: string; isCompleted: boolean ; index:number}[]
+    { title: string; isCompleted: boolean; index: number }[]
   >([]);
 
   const addTodo = (newTodo: { title: string; isCompleted: boolean }) => {
     const newIndex = listTodos.length;
-    setListTodos([...listTodos, {...newTodo,index:newIndex}]);
+    setListTodos([...listTodos, { ...newTodo, index: newIndex }]);
   };
 
   const CompltedTodo = (index: number) => {
@@ -19,36 +19,21 @@ function App() {
     setListTodos(newTodo);
   };
 
-  const deleteTodo=(index:number)=>{
-    const newTodo= listTodos.filter((todo ,i)=> i!== index );
-    setListTodos(newTodo ) ;
-  }
-
-  const EditTodo = (index: number) => {
-    const taskToEdit = listTodos.find((todo) => todo.index === index);
-  
-    if (taskToEdit) {
-      const editedTitle = window.prompt('Edit task:', taskToEdit.title);
-  
-      if (editedTitle !== null) {
-        setListTodos((prevTodos) =>
-          prevTodos.map((todo) =>
-            todo.index === index ? { ...todo, title: editedTitle } : todo
-          )
-        );
-      }
-    }
+  const deleteTodo = (index: number) => {
+    const newTodo = listTodos.filter((_todo, i) => i !== index);
+    setListTodos(newTodo);
   };
-  
-  
-  
 
 
   return (
     <div>
       <Navbar />
       <FormComponent addTodo={addTodo} />
-      <ListTodo listTodos={listTodos} CompltedTodo={CompltedTodo} EditTodo={EditTodo} deleteTodo={deleteTodo}  />
+      <ListTodo
+        listTodos={listTodos}
+        CompltedTodo={CompltedTodo}
+        deleteTodo={deleteTodo}
+      />
     </div>
   );
 }
