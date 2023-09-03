@@ -1,0 +1,48 @@
+/* Create a class for completed tasks to add a line-through style */
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  font-size: 16px;
+  background-color: antiquewhite;
+  width: 35%;
+  height: 50px;
+  border-radius: 50px;
+}
+.button-todo {
+  display: flex;
+  align-items: self-end;
+  margin-left: 14rem;
+  padding: 10px 20px;
+}
+.button-todo button {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 15px;
+  margin: 5px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
